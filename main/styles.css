@@ -1,0 +1,30 @@
+header{
+    overflow: hidden;
+}
+
+.main video{
+    z-index: -1;
+    position: fixed;
+}
+header .masthead {
+    position: relative;
+}
+.map-section__block {
+    position: relative;
+    margin-top: 50px;
+}
+
+
+.page-section {
+    padding: 5rem 0;
+    margin: 3rem 0;
+}
+
+[class*=ymaps][class*=-ground-pane] {
+    /* filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1); */
+    filter: invert(1) hue-rotate(-180deg);
+  }
