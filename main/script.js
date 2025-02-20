@@ -4,7 +4,7 @@ window.addEventListener('scroll', function() {
     const video = document.querySelector('header.main video');
     let scrollValue = window.scrollY;
 
-    heroContent.style.transform = `scale(${1 + scrollValue * .3})`;
+    heroContent.style.transform = `scale(${1 + scrollValue * .075})`;
     video.style.transform = `scale(${1 + scrollValue * .0005})`;
     
 });
