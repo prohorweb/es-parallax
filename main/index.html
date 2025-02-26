@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://extrasport.ru/minify/91c6a5dddeda027c52035d09004326303ad32094.css">
-        <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://extrasport.ru/minify/91c6a5dddeda027c52035d09004326303ad32094.css">
+    <link rel="stylesheet" href="styles.css">
 
-        <link rel="stylesheet" href="carousel/style.css">
+    <link rel="stylesheet" href="carousel/style.css">
 
 </head>
 
 <body>
     <header class="main">
-        <video id="background-video" muted=""  autoplay="" class="w-100">
+        <video id="background-video" muted="" autoplay="" class="w-100">
             <source src="https://extrasport.ru/video/bg_moution.mp4" type="video/mp4; ">
         </video>
         <div class="masthead d-flex align-items-center mt-0">
@@ -32,11 +32,12 @@
         </div>
     </header>
 
-    <section class="page-section" id="clubs">
-        <!-- <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-4 col-md-6"><a class="card" href="https://piter.extrasport.ru"><img
-                            class="card-img-top" src="https://extrasport.ru/img/clubs/welcom-block-img-2.jpg" alt="...">
+    <section class="clubs_container" id="clubs">
+            <div class="carousel_clubs-container" >
+                <div class="carousel_clubs">
+                    <div class="carousel_clubs-item">
+                        <a class="card" href="https://piter.extrasport.ru"><img
+                            src="https://extrasport.ru/img/clubs/welcom-block-img-2.jpg" alt="...">
                         <div class="card-body p-0">
                             <div class="d-flex">
                                 <div class="w-100 py-2">
@@ -47,9 +48,11 @@
                                         class="fa-sharp fa-solid fa-arrow-right"> </i></div>
                             </div>
                         </div>
-                    </a></div>
-                <div class="col-lg-4 col-md-6"><a class="card" href="https://matros.extrasport.ru"><img
-                            class="card-img-top" src="https://extrasport.ru/img/clubs/welcom-block-img-4.jpg" alt="...">
+                    </a>
+                    </div>
+                    <div class="carousel_clubs-item">
+                        <a class="card" href="https://matros.extrasport.ru"><img
+                            src="https://extrasport.ru/img/clubs/welcom-block-img-4.jpg" alt="...">
                         <div class="card-body p-0">
                             <div class="d-flex">
                                 <div class="w-100 py-2">
@@ -60,33 +63,32 @@
                                         class="fa-sharp fa-solid fa-arrow-right"> </i></div>
                             </div>
                         </div>
-                    </a></div>
-                <div class="col-lg-4 col-md-12"><a class="card" href="https://de-vision.ru"><img class="card-img-top"
-                            src="https://extrasport.ru/img/clubs/welcom-block-img-5.jpg" alt="...">
-                        <div class="card-body p-0">
-                            <div class="d-flex">
-                                <div class="w-100 py-2">
-                                    <h5 class="card-title">De-vision</h5>
-                                    <div class="card-text">Санкт-Петербург, пр. Культуры, 1</div>
+                    </a>
+                    </div>
+                    <div class="carousel_clubs-item">
+                        <a class="card" href="https://de-vision.ru">
+                            <img 
+                                    src="https://extrasport.ru/img/clubs/welcom-block-img-5.jpg" alt="...">
+                                <div class="card-body p-0">
+                                    <div class="d-flex">
+                                        <div class="w-100 py-2">
+                                            <h5 class="card-title">De-vision</h5>
+                                            <div class="card-text">Санкт-Петербург, пр. Культуры, 1</div>
+                                        </div>
+                                        <div class="btn-arrow d-flex align-items-center"><i
+                                                class="fa-sharp fa-solid fa-arrow-right"> </i></div>
+                                    </div>
                                 </div>
-                                <div class="btn-arrow d-flex align-items-center"><i
-                                        class="fa-sharp fa-solid fa-arrow-right"> </i></div>
-                            </div>
-                        </div>
-                    </a></div>
+                            </a>
+                    </div>
+                </div>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
             </div>
-        </div> -->
-        <div class="clubs_container">
-            
-            <div class="carousel_clubs-container">
-                <div class="carousel_clubs"></div>
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-            </div>
-        </div>
     </section>
 
-    <section class="map-section welcome" style="background-image: url('map.jpg'); background-size: cover; background-position: center;">
+    <section class="map-section welcome"
+        style="background-image: url('map.jpg'); background-size: cover; background-position: center;">
 
     </section>
 
@@ -105,10 +107,10 @@
                             </div>
                             <div class="col-lg-6 text-center">
                                 <div class="d-flex justify-content-center mt-3">Мы в:<a
-                                    class="fa-brands fa-vk fs-2 ps-3" href="https://vk.com/extrasport_ru"
-                                    target="_blunk"></a><a class="fa-brands fa-youtube fs-2 ps-3"
-                                    href="https://www.youtube.com/channel/UCCUUiy9ZROCNHBmDvPF-dxw/featured"
-                                    target="_blunk"></a></div>
+                                        class="fa-brands fa-vk fs-2 ps-3" href="https://vk.com/extrasport_ru"
+                                        target="_blunk"></a><a class="fa-brands fa-youtube fs-2 ps-3"
+                                        href="https://www.youtube.com/channel/UCCUUiy9ZROCNHBmDvPF-dxw/featured"
+                                        target="_blunk"></a></div>
                                 </ul>
                             </div>
                         </div>
@@ -116,16 +118,16 @@
                     <div class="col-xl-6 col-md-8">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <a
-                                class="d-flex align-items-center justify-content-end my-3 ps-3"
-                                href="https://play.google.com/store/apps/details?id=air.com.extrasport"
-                                target="_blunk" onclick="ym(21525628, 'reachGoal', 'download_app');">
-                                <p class="m-0 text-end">Доступно в <br><b>GOOGLE PLAY</b></p><i
-                                    class="fa-brands fa-google-play fs-1 ps-3"></i>
-                            </a>
+                                <a class="d-flex align-items-center justify-content-end my-3 ps-3"
+                                    href="https://play.google.com/store/apps/details?id=air.com.extrasport"
+                                    target="_blunk" onclick="ym(21525628, 'reachGoal', 'download_app');">
+                                    <p class="m-0 text-end">Доступно в <br><b>GOOGLE PLAY</b></p><i
+                                        class="fa-brands fa-google-play fs-1 ps-3"></i>
+                                </a>
                             </div>
                             <div class="col-lg-6">
-                                <div class="footer__api d-flex flex-lg-column justify-content-center"><a class="d-flex align-items-center justify-content-end my-3 ps-3"
+                                <div class="footer__api d-flex flex-lg-column justify-content-center"><a
+                                        class="d-flex align-items-center justify-content-end my-3 ps-3"
                                         href="https://itunes.apple.com/ru/app/extra-sport/id1462883244?mt=8"
                                         target="_blunk" onclick="ym(21525628, 'reachGoal', 'download_app');">
                                         <p class="m-0 text-end">Загрузите в <br><b>APP STORE</b></p><i
@@ -144,7 +146,8 @@
                     <div class="col-md-8 text-md-end">
                         <!-- <a class="text-decoration-none me-2" href="#rules" data-bs-toggle="modal">Правила поведения в клубе &nbsp; |</a> --><a
                             class="text-decoration-none" href="https://piter.extrasport.ru/legal/"
-                            target="_blunk">Правовая информация</a></div>
+                            target="_blunk">Правовая информация</a>
+                    </div>
                 </div>
             </div>
         </div>
