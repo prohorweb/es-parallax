@@ -1,0 +1,46 @@
+header{
+    overflow: hidden;
+}
+
+.main video{
+    z-index: -1;
+    position: fixed;
+}
+header .masthead {
+    position: relative;
+}
+.map-section__block {
+    position: relative;
+    margin-top: 50px;
+}
+
+
+.page-section {
+    padding: 5rem 0;
+    margin: 3rem 0;
+}
+
+
+[class*=ymaps][class*=-ground-pane] {
+    /* filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1); */
+    filter: invert(1) hue-rotate(-180deg);
+  }
+
+  /* .carousel-item video, .carousel-item img {
+    object-fit: fill;
+    height: auto;
+} */
+
+section#actions {
+    padding: 10rem 0;
+    background-image: url(actions-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, .6);
+}
