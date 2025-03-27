@@ -2,6 +2,14 @@ header{
     overflow: hidden;
 }
 
+@media (max-width: 1199.98px) { 
+    .carousel-item img, .masthead .carousel{
+        object-position: center right;
+        height: 75vh !important;
+    }
+}
+
+
 .main video{
     z-index: -1;
     position: fixed;
@@ -36,7 +44,7 @@ header .masthead {
 } */
 
 section#actions {
-    padding: 10rem 0;
+    height: 90vh;
     background-image: url(actions-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
