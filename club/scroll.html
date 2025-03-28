@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карусель & Фитнес тест-драйв</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://extrasport.ru/minify/91c6a5dddeda027c52035d09004326303ad32094.css">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            height: 100vh;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+            min-height: 100vh;
+        }
+
+        .scrollable {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Carousel Section -->
+    <div id="carouselSection" class="carousel-container">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="slide-1.jpeg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="slide-2.jpeg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="slide-3.jpeg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Фитнес тест-драйв Section -->
+    <div id="contentSection" class="scrollable">
+        <section id="about">
+            <video src="service.mp4" style="height: 100vh !important; width: 100%;
+            object-fit: cover;
+            object-position: center center;" autoplay="" muted="" loop=""> </video>
+        </section>
+        <section class="d-flex align-items-center" id="contact" style="height: 100vh;">
+            <div class="container">
+                <h2 class="section-heading text-center text-uppercase">Фитнес тест-драйв</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 fs-5">
+                        <p>Хотите больше узнать о нашем клубе? Оставьте заявку, и наши менеджеры проведут для вас
+                            подробную
+                            экскурсию. </p>
+                        <p>Для тех, кому экскурсии мало, мы предлагаем услугу «фитнес тест-драйв» — безлимитную неделю
+                            фитнеса!</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <form id="subscribe" class="form-section__form"
+                            action="https://piter.extrasport.ru/club/subscribe/" method="post"
+                            onsubmit="ym(21525628, 'reachGoal', 'zayavka'); ym(21525628, 'reachGoal', 'test_drive'); dataLayer.push({'event': 'zayavka'}); return true;">
+                            <input type="hidden" name="_csrf"
+                                value="btHThO_1Dk1bCE6P4bnHKJZsi_iGXY96Hql_z6oQZNAGgr3y16JWewtpEeKE-_FMpSLgrMg0yyh25xmLyz1Wkg==">
+                            <div class="form-group input-row"><!-- Name input--><input type="text" class="form-control"
+                                    name="name" placeholder="Ваше имя *"> </div>
+                            <div class="form-group input-row"><!-- Phone number input--><input type="text" id="w0"
+                                    class="form-control" name="tel" placeholder="Ваш телефон *"
+                                    data-plugin-inputmask="inputmask_5b3177d1" inputmode="text"> </div>
+                            <div class="checkbox"><input type="checkbox" id="soglas" name="accept" value="1"> <label
+                                    class="d-inline" for="soglas">Ознакомлен с <a
+                                        href="https://piter.extrasport.ru/privacy/" target="_blank">политикой
+                                        конфиденциальности</a></label></div>
+                        </form>
+                    </div>
+                    <div class="text-center"><button type="submit"
+                            class="btn btn-primary btn-xl text-uppercase">Записаться</button>
+                    </div>
+                </div><!-- Submit Button-->
+            </div>
+        </section>
+
+        <section class="map-section welcome"
+            style="background-image: url('map.jpg'); background-size: cover; background-position: center; height: 100vh;">
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let carousel = new bootstrap.Carousel(document.getElementById('myCarousel'), { interval: false });
+        let isScrolling = false;
+        let currentIndex = 0;
+        const totalSlides = document.querySelectorAll(".carousel-item").length;
+        let firstScrollUp = true; // Flag to track the first scroll up
+        const contentSection = document.getElementById('contentSection');
+
+        // Listen for Bootstrap carousel slide event to track current index
+        document.getElementById('myCarousel').addEventListener('slid.bs.carousel', function (event) {
+            currentIndex = event.to;
+        });
+
+        window.addEventListener("wheel", function (event) {
+            if (!isScrolling) {
+                if (event.deltaY > 0) { // Scroll down
+                    if (currentIndex < totalSlides - 1) {
+                        carousel.next();
+                    } else if (currentIndex === totalSlides - 1) {
+                        // Allow scrolling to the rest of the page after the last slide
+                        setTimeout(scrollToContent, 500);
+                    }
+                    firstScrollUp = true; // Reset the flag when scrolling down
+                } else { // Scroll up
+                    if (isContentSectionAtTop() && isContentSectionScrolledToTop()) {
+                        // Trigger scrollToTop only when contentSection is at the top and scrolled to the top
+                        scrollToTop();
+                    } else if (window.scrollY === 0) {
+                        if (firstScrollUp) {
+                            // On the first scroll up, do nothing
+                            firstScrollUp = false;
+                        } else if (currentIndex > 0) {
+                            // On the second scroll up, move to the previous slide
+                            carousel.prev();
+                            firstScrollUp = true; // Reset the flag after moving to the previous slide
+                        }
+                    }
+                }
+
+                isScrolling = true;
+                setTimeout(() => isScrolling = false, 500); // Prevent quick repeat scrolling
+            }
+        });
+
+        function isContentSectionAtTop() {
+            const rect = contentSection.getBoundingClientRect();
+            return rect.top === 0; // Check if the top of contentSection is at the top of the viewport
+        }
+
+        function isContentSectionScrolledToTop() {
+            return contentSection.scrollTop === 0; // Check if the contentSection is scrolled to the top
+        }
+
+        function scrollToContent() {
+            window.scrollTo({ top: contentSection.offsetTop, behavior: "smooth" });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
+
+</html>
