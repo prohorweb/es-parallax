@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.carousel-container {
+    margin-top: -117px;
+    height: 100vh;
+}
+
+.section-padding {
+    padding: 80px 0;
+    min-height: 100vh;
+}
+
+.scrollable {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}

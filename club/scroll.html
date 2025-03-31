@@ -7,7 +7,8 @@
     <title>Карусель & Фитнес тест-драйв</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://extrasport.ru/minify/91c6a5dddeda027c52035d09004326303ad32094.css">
-
+    <link rel="stylesheet" href="carousel/style.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             margin: 0;
@@ -16,6 +17,20 @@
 
         .carousel-container {
             height: 100vh;
+        }
+
+        @media (min-width: 992px) {
+            .carousel-container {
+                margin-top: -117px;
+            }
+        }
+
+        .masthead-heading {
+            height: 100vh !important;
+        }
+
+        .carousel-item img {
+            object-position: center right;
         }
 
         .section-padding {
@@ -32,12 +47,119 @@
 </head>
 
 <body>
+    <div class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+        <div class="container">
+            <div class="logo"><a class="navbar-brand d-flex align-items-center justify-content-center"
+                    href="https://piter.extrasport.ru/"><img src="https://extrasport.ru/img/logo.svg"
+                        alt="extrasport logo"></a>
+                <div class="navbar__adress d-block d-lg-none">
+                    <div class="aderss-section d-flex justify-content-center"><i
+                            class="fa-solid fa-location-dot pe-1 d-md-block d-none"> </i><span
+                            class="me-1 d-md-block d-none">Ваш клуб:</span><a href="#clubModal" class="text-center"
+                            data-bs-toggle="modal">Санкт-Петербург, ул. Типанова, 21, ТК «Питер»<i
+                                class="fa-solid fa-chevron-down"> </i></a></div>
+                    <div class="aderss-section d-flex justify-content-center"><a class="fs-6"
+                            href="tel:+7 812 565 52 63">+7 812 565 52 63</a></div>
+                </div>
+            </div>
+            <div class="call d-lg-none d-md-block d-none"><a href="#callModal" data-bs-toggle="modal">
+                    <div class="btn btn-primary btn-lg"><i
+                            class="fa-sharp fa-solid fa-phone-arrow-down-left me-1"></i>Обратный звонок</div>
+                </a></div>
+            <div class="nav-burger d-block d-lg-none d-flex justify-content-between">
+                <div class="call d-block d-md-none"><a href="#callModal" data-bs-toggle="modal">
+                        <div class="btn btn-primary btn-lg"><i
+                                class="fa-sharp fa-solid fa-phone-arrow-down-left me-1"></i>Обратный звонок</div>
+                    </a></div><button class="navbar-toggler d-flex align-items-center justify-content-end" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                    aria-controls="offcanvasDarkNavbar"> <span>МЕНЮ</span><span
+                        class="navbar-toggler-icon"></span></button>
+            </div>
+            <div class="offcanvas offcanvas-end text-bg-dark offcanvas-size-sm" id="offcanvasDarkNavbar" tabindex="-1"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="d-none d-lg-block">
+                    <div class="navbar__adress d-flex align-items-center justify-content-center">
+                        <div class="aderss-section d-flex justify-content-center"><i
+                                class="fa-solid fa-location-dot pe-1"> </i><span class="me-1 d-xl-block d-lg-none">Ваш
+                                клуб:</span><a href="#clubModal" data-bs-toggle="modal">Санкт-Петербург, ул. Типанова,
+                                21, ТК «Питер»<i class="fa-solid fa-chevron-down"> </i></a></div>
+                        <div class="aderss-section"><a class="ms-3" href="tel:+7 812 565 52 63">+7 812 565 52 63</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><a href="#clubModal"
+                            data-bs-toggle="modal">EXTRASPORT ТК «ПИТЕР»</a></h5><button
+                        class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-center">
+                    <ul class="navbar-nav text-uppercase">
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">О клубе</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://piter.extrasport.ru/es/club/">Обзор клуба</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://piter.extrasport.ru/es/command/">Тренеры</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://piter.extrasport.ru/es/news/">Новости</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://piter.extrasport.ru/es/events/">Мероприятия</a></li>
+                                <li><a class="dropdown-item" href="https://piter.extrasport.ru/es/job/">Вакансии</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.youtube.com/channel/UCCUUiy9ZROCNHBmDvPF-dxw/featured"
+                                        target="_blank">Истории успеха</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.youtube.com/channel/UCCUUiy9ZROCNHBmDvPF-dxw/featured"
+                                        target="_blank">Советы тренеров</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://piter.extrasport.ru/card/shares/">Акции</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://piter.extrasport.ru/services/">Услуги</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://piter.extrasport.ru/card/type/">Абонементы и цены</a></li>
+                        <li class="nav-item"><a class="nav-link active"
+                                href="https://piter.extrasport.ru/#contacts">Контакты</a></li>
+                        <li class="nav-item d-block d-sm-none"><a class="nav-link" href="#callModal"
+                                data-bs-toggle="modal">
+                                <div class="btn btn-primary btn-lg"><i
+                                        class="fa-sharp fa-solid fa-phone-arrow-down-left me-1"></i>Обратный звонок
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="call d-lg-block d-none"><a href="#callModal" data-bs-toggle="modal">
+                    <div class="btn btn-primary btn-lg"><i
+                            class="fa-sharp fa-solid fa-phone-arrow-down-left me-1"></i>Обратный звонок</div>
+                </a></div>
+        </div>
+    </div>
 
     <!-- Carousel Section -->
     <div id="carouselSection" class="carousel-container">
         <div id="myCarousel" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
+                    <div
+                        class="masthead-heading text-uppercase d-flex flex-column align-items-center justify-content-center title">
+                        Сеть фитнес клубов на результат!
+                        <div class="masthead-subheading white">Ваш клуб - EXTRASPORT ТК «ПИТЕР»</div>
+                    </div><video muted="" loop="" autoplay="" class="w-100">
+                        <source src="https://extrasport.ru/video/bg_moution.mp4"
+                            type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+                        <source src="https://extrasport.ru/video/bg_moution.webm"
+                            type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+                    </video>
+                </div>
+                <div class="carousel-item ">
                     <img src="slide-1.jpeg" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
@@ -50,12 +172,106 @@
         </div>
     </div>
 
+
     <!-- Фитнес тест-драйв Section -->
     <div id="contentSection" class="scrollable">
         <section id="about">
             <video src="service.mp4" style="height: 100vh !important; width: 100%;
             object-fit: cover;
             object-position: center center;" autoplay="" muted="" loop=""> </video>
+        </section>
+
+
+
+        <section id="actions">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase m-0 py-5">Акции клуба EXTRASPORT ТК
+                        «ПИТЕР»</h2>
+                </div>
+            </div>
+            <div class="clubs_container" style="height: auto;">
+
+                <div class="carousel_clubs-container">
+                    <div class="carousel_clubs">
+                        <div class="carousel_clubs-item">
+                            <a class="card" href="https://piter.extrasport.ru">
+                                <div class="date-action">До 21 марта</div>
+
+                                <img src="https://extrasport.ru/uploads/image/share/IMG-20250320-WA0000-1742474352.jpg"
+                                    alt="...">
+                                <!-- <div class="card-body p-0">
+                            <div class="d-flex">
+                                <div class="w-100 py-2">
+                                    <h5 class="card-title">ТРЦ «Питер»</h5>
+                                    <div class="card-text">Санкт-Петербург, ул. Типанова, 21</div>
+                                </div>
+                                <div class="btn-arrow d-flex align-items-center"><i
+                                        class="fa-sharp fa-solid fa-arrow-right"> </i></div>
+                            </div>
+                        </div> -->
+                            </a>
+                        </div>
+                        <div class="carousel_clubs-item">
+                            <a class="card" href="https://piter.extrasport.ru">
+                                <div class="date-action">До 31 марта</div><img
+                                    src="https://extrasport.ru/uploads/image/share/IMG-20250305-WA0005-1741596709.jpg"
+                                    alt="...">
+                                <div class="card-body p-0">
+                                    <div class="d-flex">
+                                        <!-- <div class="w-100 py-2">
+                                    <h5 class="card-title">«Матроса железняка»</h5>
+                                    <div class="card-text">Санкт-Петербург, ул. Матроса Железняка, 57А</div>
+                                </div>
+                                <div class="btn-arrow d-flex align-items-center"><i
+                                        class="fa-sharp fa-solid fa-arrow-right"> </i></div> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="carousel_clubs-item">
+                            <a class="card" href="https://matros.extrasport.ru/card/shares/fri/">
+                                <div class="date-action">До 1 апреля</div>
+                                <img src="https://extrasport.ru/uploads/image/share/osdoltotlosdt-1739308193.jpg"
+                                    alt="...">
+                                <!-- <div class="card-body p-0">
+                                    <div class="d-flex">
+                                        <div class="w-100 py-2">
+                                            <h5 class="card-title">De-vision</h5>
+                                            <div class="card-text">Санкт-Петербург, пр. Культуры, 1</div>
+                                        </div>
+                                        <div class="btn-arrow d-flex align-items-center"><i
+                                                class="fa-sharp fa-solid fa-arrow-right"> </i></div>
+                                    </div>
+                                </div> -->
+                            </a>
+                        </div>
+                        <div class="carousel_clubs-item">
+                            <a class="card" href="https://matros.extrasport.ru/card/shares/fri/">
+                                <div class="date-action">До 1 апреля</div>
+                                <img src="https://extrasport.ru/uploads/image/share/IMG-20250212-WA0000-1739361915.jpg"
+                                    alt="...">
+                                <!-- <div class="card-body p-0">
+                                    <div class="d-flex">
+                                        <div class="w-100 py-2">
+                                            <h5 class="card-title">De-vision</h5>
+                                            <div class="card-text">Санкт-Петербург, пр. Культуры, 1</div>
+                                        </div>
+                                        <div class="btn-arrow d-flex align-items-center"><i
+                                                class="fa-sharp fa-solid fa-arrow-right"> </i></div>
+                                    </div>
+                                </div> -->
+                            </a>
+                        </div>
+                    </div>
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center"><a class="btn btn-primary btn-xl"
+                    href="https://piter.extrasport.ru/card/shares/">Все
+                    акции</a></div>
         </section>
         <section class="d-flex align-items-center" id="contact" style="height: 100vh;">
             <div class="container">
@@ -98,7 +314,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <script src="https://extrasport.ru/js/app.js"></script>
+    <script src="carousel/script.js"></script>
+    <script src="scroll/scroll.js"></script>
+    <!-- <script>
         let carousel = new bootstrap.Carousel(document.getElementById('myCarousel'), { interval: false });
         let isScrolling = false;
         let currentIndex = 0;
@@ -158,7 +377,7 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
-    </script>
+    </script> -->
 
 </body>
 

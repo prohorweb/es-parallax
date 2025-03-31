@@ -1,4 +1,4 @@
-let currentIndex = 0;
+// let currentIndex = 0;
 const carousel = document.querySelector(".carousel_clubs");
 
 if (carousel) {
